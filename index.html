@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Internet Usage Data Visualization</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+    body {
+      overflow: hidden;
+      margin: 0;
+    }
+    
+    .header {
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      height: 72px;
+      background-color: #C09AFF;
+      border-bottom: 2px solid white;
+      box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .header h1 {
+      display: inline-block;
+      position: absolute;
+      animation: panningText 4000s linear infinite;
+      color: #3A0099;
+      margin: 0;
+      white-space: nowrap;
+      font-size: 60px;
+      font-family: Helvetica Neue, sans-serif;
+      font-weight: normal;
+      letter-spacing: -2.2px;
+    }
+    
+    @keyframes panningText {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · INTERNET STAT VISUALIZER · </h1>
+  </div>
+  <div class="input-container">
+    <div class="input-item">
+      <label for="socialMedia">SOCIAL MEDIA (IN HOURS):</label>
+      <input type="number" id="socialMedia" step="0.1" value="0">
+    </div>
+    <div class="input-item">
+      <label for="news">ENTERTAINMENT (IN HOURS):</label>
+      <input type="number" id="entertainment" step="0.1" value="0">
+    </div>
+    <div class="input-item">
+      <label for="entertainment">WORK (IN HOURS):</label>
+      <input type="number" id="work" step="0.1" value="0">
+    </div>
+    <div class="input-item">
+      <label for="productivity">OTHER (IN HOURS):</label>
+      <input type="number" id="other" step="0.1" value="0">
+    </div>
+    <button onclick="trackStats()">Track Stats</button>
+    <button onclick="clearStats()">Clear Stats</button>
+  </div>
+
+  <div class="chart-container">
+    <canvas id="usageChart"></canvas>
+  </div>
+
+  <div class="alert" id="alertBox">
+    <span class="closebtn" onclick="closeAlert()">&times;</span>
+    You are spending significantly more time in one category compared to others.
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
